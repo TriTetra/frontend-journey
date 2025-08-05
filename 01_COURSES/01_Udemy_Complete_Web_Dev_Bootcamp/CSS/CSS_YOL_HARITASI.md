@@ -10,11 +10,11 @@ Her şeyden önce, CSS'in nasıl çalıştığını ve temel sözdizimini anlama
 
 | Konu | Açıklama | Kritik Bilgi |
 | :--- | :--- | :--- |
-| **CSS Ekleme Yöntemleri** | CSS kodunu HTML'e dahil etmenin 3 yolu: Satır içi, Dahili ve Harici. | **Harici (`<link>`) yöntem en iyi pratiktir.** Kodun düzenli ve yönetilebilir kalmasını sağlar. |
-| **Seçiciler (Selectors)** | Stilleri doğru HTML elemanlarına uygulamak için kullanılır. | **ID (`#`)** benzersiz bir eleman için, **Sınıf (`.`)** ise birden çok eleman için kullanılır. Bu en temel farktır. |
-| **Temel Özellikler** | `color`, `background-color`, `font-size`, `font-family` gibi temel stil özellikleri. | Renkler için **Hex kodları** (`#RRGGBB`), yazı tipi boyutları için **`rem`** birimi modern standartlardır. |
-| **Kutu Modeli (Box Model)** | Her elemanın bir kutu olduğunu ve bu kutunun `margin`, `border`, `padding` katmanlarından oluştuğunu anlatan model. | **`margin` dış boşluk, `padding` iç boşluktur.** Bu ayrım, düzen oluşturmanın temelidir. |
-| **CSS Cascade** | Birden fazla stil çakıştığında hangisinin kazanacağını belirleyen öncelik sistemi. | **Özgüllük (Specificity)** en önemli kuraldır: **ID > Sınıf > Element**. |
+| CSS Ekleme Yöntemleri | CSS kodunu HTML'e dahil etmenin 3 yolu: Satır içi, Dahili ve Harici. | Harici (`<link>`) yöntem en iyi pratiktir. Kodun düzenli ve yönetilebilir kalmasını sağlar. |
+| Seçiciler (Selectors) | Stilleri doğru HTML elemanlarına uygulamak için kullanılır. | `#id` yalnızca bir elemana, `.class` ise birden fazla elemana uygulanır. |
+| Temel Özellikler | `color`, `background-color`, `font-size`, `font-family` gibi temel stil özellikleri. | Renkler için `#RRGGBB`, yazı tipi boyutları için `rem` birimi modern standarttır. |
+| Kutu Modeli (Box Model) | Her eleman bir kutudur: `margin`, `border`, `padding`, `content`. | `margin`: dış boşluk, `padding`: iç boşluk. |
+| CSS Cascade | Stil çakışmalarında hangi kuralın geçerli olacağını belirler. | Özgüllük sırası: `ID > Class > Element`. |
 
 ---
 
@@ -22,21 +22,20 @@ Her şeyden önce, CSS'in nasıl çalıştığını ve temel sözdizimini anlama
 
 Web sayfalarını yapılandırma yöntemleri zamanla gelişmiştir. Bu evrimi anlamak, modern araçların neden bu kadar güçlü olduğunu kavramamıza yardımcı olur.
 
+### 📊 Diyagram – Düzen Yaklaşımlarının Gelişimi
+
 ```mermaid
 graph TD
-    A[<b>Eski Yöntemler</b><br/>(Tablolar, Float)] --> B{<b>Ara Dönem</b><br/>(Position, Display)}
-    B --> C[<b>Modern Düzen (Layout)</b><br/>Flexbox & Grid]
+    A["Eski Yöntemler<br/>(Tablolar, Float)"] --> B["Ara Dönem<br/>(Position, Display)"]
+    B --> C["Modern Düzen<br/>(Flexbox & Grid)"]
 
     subgraph "Modern Araçlar"
-        D[<b>Flexbox (1D)</b><br/>Tek boyutlu hizalama<br/>(Menüler, kart içi öğeler)]
-        E[<b>Grid (2D)</b><br/>İki boyutlu düzen<br/>(Tüm sayfa iskeleti)]
+        D["Flexbox (1D)<br/>- Satır veya sütun hizalama"]
+        E["Grid (2D)<br/>- Karmaşık sayfa iskeletleri"]
     end
 
-    C --> D & E
-
-    style A fill:#ffcccc
-    style B fill:#cce5ff
-    style C fill:#d4edda
+    C --> D
+    C --> E
 ```
 
 ### Düzen Teknikleri Hiyerarşisi
