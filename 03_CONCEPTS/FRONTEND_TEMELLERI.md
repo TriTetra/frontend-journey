@@ -123,9 +123,9 @@ Bir web sitesinin, görüntülendiği cihazın (mobil, tablet, masaüstü) ekran
 ### Duyarlılık Araç Kutusu
 ```mermaid
 graph TD
-    A[<b>Medya Sorguları</b><br/>`@media (max-width: 600px)`]
-    B[<b>Esnek Düzenler</b><br/>Flexbox & Grid]
-    C[<b>Akışkan Birimler</b><br/>`%`, `vw`, `vh`, `rem`]
+    A["<b>Medya Sorguları</b><br/>`@media (max-width: 600px)`"]
+    B["<b>Esnek Düzenler</b><br/>Flexbox & Grid"]
+    C["<b>Akışkan Birimler</b><br/>`%`, `vw`, `vh`, `rem`"]
 
     A -- "Kırılma noktaları belirler" --> D{Duyarlı Tasarım}
     B -- "Esnek iskelet oluşturur" --> D
