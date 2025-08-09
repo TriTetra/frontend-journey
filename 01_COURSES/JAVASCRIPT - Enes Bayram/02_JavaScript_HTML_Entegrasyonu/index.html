@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Integration to index</title>
+
+    <!-- 
+        YÖNTEM 1: <head> tagları arasına script eklemek.
+        - JavaScript kodları buraya yazılabilir.
+        - Ancak bu yöntem tavsiye edilmez. Çünkü tarayıcı kodları yukarıdan aşağıya doğru okur.
+        - Eğer script'ler burada olursa, henüz HTML body'si (DOM) yüklenmeden çalışabilirler.
+        - Bu durumda, body içerisindeki elementlere (p, div, button vb.) erişmeye çalıştığımızda hata alırız çünkü o elementler daha tarayıcı tarafından tanınmamıştır.
+    -->
+    <script>
+        // console.log("Working...") 
+    </script>
+
+</head>
+<body>
+
+    <h1>Hello World</h1>
+
+    <!--
+        YÖNTEM 2: <body> tagının sonuna script eklemek.
+        - Bu en çok tavsiye edilen yöntemlerden biridir.
+        - Tarayıcı tüm HTML elementlerini (h1, p, div vb.) okuyup bitirdikten sonra bu script'leri çalıştırır.
+        - Bu sayede JavaScript kodlarımız sayfa içerisindeki tüm elementlere sorunsuzca erişebilir.
+        - Bu sıralama kayması ve "element bulunamadı" hatalarını önler.
+    -->
+    <script>
+        // console.log("Working bottom....")
+    </script>
+
+    <!--
+        YÖNTEM 3: Harici bir JavaScript dosyası eklemek. (EN İYİ YÖNTEM)
+        - JavaScript kodlarımızı ayrı bir .js uzantılı dosyada yazarız.
+        - Bu, kodun daha düzenli, yönetilebilir ve modüler olmasını sağlar. HTML sayfamız şişmez.
+        - script tag'ının "src" (source) attribute'u kullanılarak dosya yolu belirtilir.
+        - Bu yöntem de body'nin en sonunda kullanılmalıdır, böylece tüm HTML yüklendikten sonra script'imiz çalışır.
+    -->
+    <script src="script.js"></script>
+</body>
+</html>
